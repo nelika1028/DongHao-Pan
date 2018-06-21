@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>让DIV居中的各种方法</title>
+		<style type="text/css">
+			/*
+			 * 方法一：绝对定位使元素居中
+			 */
+			.parent_01{
+				width: 100%;
+				height: 400px;
+				background-color: bisque;
+				position: relative;
+				overflow: hidden;
+				word-wrap: break-word;
+				
+			}
+			.children_01{
+				width: 400px;
+				height: 200px;
+				background-color: red;
+				position: absolute;
+				margin: auto;
+				left: 0; right: 0; top: 0; bottom: 0; 
+			}
+			/*
+			 * 子元素盒子left，margin，padding，right加起来等于父元素宽度。实际效果是margin填充满了。
+			 */
+			.parent_02{
+				width: 1000PX;
+				height: 400px;
+				background-color: black;
+				position: relative;
+				margin: auto;
+				
+			}
+			.children_02{
+				width: 400px;
+				height: 200px;
+				background-color: red;
+				position: absolute;
+				left: 50%;  top: 50%;  /*子元素左上角是父元素的正中心*/
+				margin-top: -100px; margin-left: -200px; /*反向偏移一半像素*/
+			}
+			/*
+			 * 需要子元素固定数值的高，宽。 不好用！
+			 */
+			.parent_03{
+				width: 100%;
+				height: 400px;
+				background-color: black;
+				position: relative;
+				margin: auto;
+			}
+			.children_03{
+				width: 50%;
+				height: 20%;
+				background-color: red;
+				position: absolute;
+				left: 50%;  top: 50%;  /*子元素左上角是父元素的正中心*/
+				transform: translate(-50%,-50%);  /*反向偏移一半*/
+			}
+			/*
+			 * 绝对定位都一个屌样，文本不会环绕子元素。
+			 */
+			.parent_04{
+				width: 100%;
+				height: 400px;
+				background-color: black;
+				
+				margin: auto;
+				display: flex;
+				justify-content: center;
+				-webkit-justify-content: center;
+				align-items: center;
+				-webkit-align-items: center;
+				flex-wrap: wrap;
+				
+				
+			}
+			.children_04{
+				width: 50%;
+				height: 20%;
+				background-color: red;
+			}
+			/*
+			 * flex布局很好用，方便，大气，强！
+			 */
+		</style>
+	</head>
+	<body>
+		<div class="parent_01">
+			woshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhiwoshiwenzhihiwoshiwenzhiwoshiwenzhiwoshiwenzhi
+			<div class="children_01">
+			</div>
+		</div>
+		<br />
+		<div class="parent_02">
+			<div class="children_02">
+			</div>
+		</div>
+		<br />
+		<div class="parent_03">
+			<div class="children_03">
+			</div>
+		</div>
+		<br />
+		<div class="parent_04">
+			<div class="children_04">
+			</div>
+		</div>
+	</body>
+</html>
